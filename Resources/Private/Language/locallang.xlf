@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.0">
- <file source-language="en" datatype="plaintext" original="messages">
-  <body>
-    <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_tab">
-    <source>Watermark settings</source>
-   </trans-unit>
-   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_source">
-    <source>Watermark source</source>
-   </trans-unit>
-   <trans-unit id="tx_cywatermark_watermark_source.category">
-    <source>From category (default)</source>
-   </trans-unit>
-   <trans-unit id="tx_cywatermark_watermark_source.file">
-    <source>From specified file</source>
-   </trans-unit>
-   <trans-unit id="tx_cywatermark_watermark_source.none">
-    <source>No watermark</source>
-   </trans-unit>
-   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_file">
-    <source>Watermark file</source>
-   </trans-unit>
-   <trans-unit id="add_category_watermark_file">
-    <source>Select watermark file</source>
-   </trans-unit>
+  <file source-language="en" datatype="plaintext" original="messages">
+    <body>
+      <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_tab">
+        <source>Watermark settings</source>
+      </trans-unit>
+      <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_source">
+        <source>Watermark source</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_source.category">
+        <source>From category (default)</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_source.file">
+        <source>From specified file</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_source.none">
+        <source>No watermark</source>
+      </trans-unit>
+      <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_file">
+        <source>Watermark file</source>
+      </trans-unit>
+      <trans-unit id="add_category_watermark_file">
+        <source>Select watermark file</source>
+      </trans-unit>
 
 
+      <trans-unit id="sys_category.tx_cywatermark_watermark_file">
+        <source>Category Watermark Image</source>
+      </trans-unit>
+      <trans-unit id="add_category_watermark_file">
+        <source>Add category watermark image</source>
+      </trans-unit>
+      <trans-unit id="sys_category.tx_cywatermark_watermark_relative_size">
+        <source>Relavite size</source>
+      </trans-unit>
+      <trans-unit id="sys_category.tx_cywatermark_watermark_relative_size.default.origianl_size">
+        <source>Watermark size (in percent)</source>
+      </trans-unit>
+      <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_position">
+        <source>Watermark position</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.top_left">
+        <source>Top left</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.top_right">
+        <source>Top right</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.bottom_left">
+        <source>Bottom left</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.bottom_right">
+        <source>Bottom right</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.center">
+        <source>Center </source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.diagonal_slash">
+        <source>Diagonal ( / )</source>
+      </trans-unit>
+      <trans-unit id="tx_cywatermark_watermark_position.diagonal_backslash">
+        <source>Diagonal ( \ )</source>
+      </trans-unit>
 
-   <trans-unit id="sys_category.tx_cywatermark_watermark_file">
-    <source>Category Watermark Image</source>
-   </trans-unit>
-   <trans-unit id="add_category_watermark_file">
-    <source>Add category watermark image</source>
-   </trans-unit>
 
-   
-  </body>
- </file>
+    </body>
+  </file>
 </xliff>
