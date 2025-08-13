@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+ <file source-language="en" target-language="de" datatype="plaintext" original="messages">
+  <body>
+   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_tab">
+    <source>Watermark settings</source>
+    <target>Wasserzeichen-Einstellungen</target>
+   </trans-unit>
+   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_source">
+    <source>Watermark source</source>
+    <target>Quelle des Wasserzeichens</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_source.category">
+    <source>From category (default)</source>
+    <target>Aus Kategorie (Standard)</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_source.file">
+    <source>From specified file</source>
+    <target>Aus angegebener Datei</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_source.none">
+    <source>No watermark</source>
+    <target>Kein Wasserzeichen</target>
+   </trans-unit>
+   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_file">
+    <source>Watermark file</source>
+    <target>Datei für Wasserzeichen</target>
+   </trans-unit>
+   <trans-unit id="add_category_watermark_file">
+    <source>Select watermark file</source>
+    <target>Wasserzeichen-Datei auswählen</target>
+   </trans-unit>
+
+
+   <trans-unit id="sys_category.tx_cywatermark_watermark_file">
+    <source>Category Watermark Image</source>
+    <target>Wasserzeichen-Bild der Kategorie</target>
+   </trans-unit>
+   <trans-unit id="add_category_watermark_file">
+    <source>Add category watermark image</source>
+    <target>Wasserzeichen-Bild hinzufügen</target>
+   </trans-unit>
+   <trans-unit id="sys_category.tx_cywatermark_watermark_relative_size">
+    <source>Relavite size</source>
+    <target>Relative Größe</target>
+   </trans-unit>
+   <trans-unit id="sys_category.tx_cywatermark_watermark_relative_size.default.origianl_size">
+    <source>Watermark size (in percent)</source>
+    <target>Wasserzeichen-Größe (in Prozent)</target>
+   </trans-unit>
+   <trans-unit id="sys_file_metadata.tx_cywatermark_watermark_position">
+    <source>Watermark position</source>
+    <target>Wasserzeichenposition</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.top_left">
+    <source>Top left</source>
+    <target>Oben links</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.top_right">
+    <source>Top right</source>
+    <target>Oben rechts</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.bottom_left">
+    <source>Bottom left</source>
+    <target>Unten links</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.bottom_right">
+    <source>Bottom right</source>
+    <target>Unten links</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.center">
+    <source>Center </source>
+    <target>In die Mitte</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.diagonal_slash">
+    <source>Diagonal ( / )</source>
+    <target>Diagonal ( / )</target>
+   </trans-unit>
+   <trans-unit id="tx_cywatermark_watermark_position.diagonal_backslash">
+    <source>Diagonal ( \ )</source>
+    <target>Diagonal ( \ )</target>
+   </trans-unit>
+
+
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+   <trans-unit id="">
+    <source></source>
+    <target></target>
+   </trans-unit>
+
+
+  </body>
+ </file>
+</xliff>

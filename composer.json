@@ -1,0 +1,29 @@
+{
+  "name": "clyancer/cy_watermark",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0-or-later",
+  "description": "Creates news from mails",
+  "authors": [
+    {
+      "name": "C. Gogolin",
+      "role": "Developer"
+    },
+    {
+      "name": "C. Gogolin",
+      "role": "Product Manager"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^13.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cylancer\\CyWatermark\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "cywatermark"
+    }
+  }
+}
