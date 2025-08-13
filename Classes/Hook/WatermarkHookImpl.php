@@ -32,6 +32,7 @@ class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
             && $this->shouldProcess($task->getTargetFile())
         ) {
             $sourceFile = $task->getSourceFile();
+          //  debug($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source']);
             switch (SourceOption::tryFrom($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source'])) {
                 case SourceOption::NONE:
                     return false;

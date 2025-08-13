@@ -25,7 +25,7 @@ ExtensionManagementUtility::addTCAcolumns('sys_category', [
                 ],
                 'minitems' => 0,
                 'maxitems' => 1,
-                'allowed' => 'common-image-types',
+                'allowed' => ['jpeg','png','jpg','bmp','gif','webp'],
             ],
 
     ],
