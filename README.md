@@ -2,6 +2,7 @@
 
 ## Change log
 
+* 0.4.0 UPD Connect the extension settings to the watermark service.
 * 0.3.0 DOC Add a readme documentation.
 * 0.2.0 INI beta version
 * 0.1.0 INI version
@@ -32,6 +33,38 @@ This extension allows you to apply watermarks to images in TYPO3.
 
 ![Extension settings](Documentation/Images/configuration-extension.png)
 
+* **In JSON format, you can specify the PHP-supported memory options for each image format here.**
+  \
+  Here are the default values in a pretty format:
+
+  ```JSON
+    {
+    "jpeg":{
+        "quality":75
+    },
+    "webp":{
+        "quality":80
+    },
+    "bmp":{
+        "compressed":true
+    },
+    "png":{
+        "quality":-1,
+        "filters":"NO_FILTER"
+    }
+    }
+  ```
+
+  *Hint:* Thif gif-format has not save options. (see:  [PHP: imagegif - Manual](https://www.php.net/manual/en/function.imagegif.php))
+
+* **Supported mime types (comma separated)**
+   \
+   Here are the default values in a pretty format:
+
+   ```Code
+   image/jpeg,image/png,image/gif,image/webp,image/bmp
+   ```
+
 ### Usage
 
 1. **Preparation**
@@ -52,7 +85,7 @@ This extension allows you to apply watermarks to images in TYPO3.
    3.2 Image setting – Source set to chosen categories
        When you select this source, all categories assigned to the image are scanned for watermark settings and applied.
        ![Watermark via category source](Documentation/Images/set-category-watermarksource.png)
-       _Note:_ If watermark source is set to “Category” or “No watermark,” the following settings apply:
+       Note: If watermark source is set to “Category” or “No watermark,” the following settings apply:
        - Watermark position
        - Relative size
        - Watermark file
@@ -66,4 +99,4 @@ This extension allows you to apply watermarks to images in TYPO3.
 
 Watermarks are only stamped in on first display. If you change watermark settings on images that have already been displayed, the updates won’t appear immediately. The most radical and effective solution is to delete the _processed_ files:
 
-![Deleting the _processed_ files (last entry in the list)](Documentation/Images/workaround-remove-processed-files.png)
+![Deleting the \_processed\_ files (last entry in the list)](Documentation/Images/workaround-remove-processed-files.png)

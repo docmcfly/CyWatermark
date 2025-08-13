@@ -111,19 +111,19 @@ final class WatermarkService
             switch ($extension) {
                 case 'jpg':
                 case 'jpeg':
-                    imagejpeg($image, $localProcessingFile, 90);
+                    imagejpeg($image, $localProcessingFile, WatermarkService::getImageSaveQuality("jpeg"));
                     return $localProcessingFile;
                 case 'png':
-                    imagepng($image, $localProcessingFile);
+                    imagepng($image, $localProcessingFile, WatermarkService::getImageSaveQuality("png"), WatermarkService::getPngSaveFilter());
                     return $localProcessingFile;
                 case 'bmp':
-                    imagebmp($image, $localProcessingFile);
+                    imagebmp($image, $localProcessingFile, WatermarkService::getImageSaveCompress("bmp"));
                     return $localProcessingFile;
                 case 'gif':
                     imagegif($image, $localProcessingFile);
                     return $localProcessingFile;
                 case 'webp':
-                    imagewebp($image, $localProcessingFile);
+                    imagewebp($image, $localProcessingFile, WatermarkService::getImageSaveQuality("png"));
                     return $localProcessingFile;
                 default:
                     throw new Exception("Not supported image format: $extension");
@@ -266,8 +266,55 @@ final class WatermarkService
         if (!empty($supportedMimeTypes)) {
             return \in_array(\strtolower($mimeType), \explode(',', \strtolower($supportedMimeTypes)), true);
         }
-
         return false;
     }
 
+    private static function getImageSaveSettings(string $type): array|bool
+    {
+        $imageSaveOptions = (string) Configuration::get('image_save_options');
+        if (!empty($imageSaveOptions)) {
+            $tmp = json_decode($imageSaveOptions, true);
+            return isset($mp[$type]) ? $tmp[$type] : [];
+        }
+        return false;
+    }
+
+
+    private static function getImageSaveQuality(string $type): int
+    {
+        $imageSaveOptions = WatermarkService::getImageSaveSettings($type);
+        return isset($imageSaveOptions['quality']) ? intval($imageSaveOptions['quality']) : -1;
+    }
+
+
+    private static function getImageSaveCompress(string $type): bool
+    {
+        $imageSaveOptions = WatermarkService::getImageSaveSettings($type);
+        return isset($imageSaveOptions['compress']) ? boolval($imageSaveOptions['compress']) : false;
+    }
+
+
+    private static function getPngSaveFilter(): int
+    {
+        $imageSaveOptions = WatermarkService::getImageSaveSettings('png');
+        if (isset($imageSaveOptions['filter'])) {
+            switch ($imageSaveOptions['filter']) {
+                case 'FILTER_NONE':
+                    return PNG_FILTER_NONE;
+                case 'FILTER_SUB':
+                    return PNG_FILTER_SUB;
+                case 'FILTER_UP':
+                    return PNG_FILTER_UP;
+                case 'FILTER_AVG':
+                    return PNG_FILTER_AVG;
+                case 'FILTER_PAETH':
+                    return PNG_FILTER_PAETH;
+                case 'ALL_FILTERS':
+                    return PNG_ALL_FILTERS;
+                default:
+                    throw new Exception("Filter: " . $imageSaveOptions['filter'] . ' not supported.');
+            }
+        }
+        return PNG_FILTER_NONE;
+    }
 }

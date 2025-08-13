@@ -7,16 +7,3 @@ services:
   Cylancer\CyWatermark\:
     resource: '../Classes/**'
     exclude:  '../Classes/Domain/Model/*'
-    #   - '../Classes/EventListener/*'
-
-  # Cylancer\CyWatermark\EventListener\AfterFileProcessing:
-  #   tags:
-  #     - name: event.listener
-  #       identifier: 'watermark.after-file-processing'
-  #       event: TYPO3\CMS\Core\Resource\Event\AfterFileProcessingEvent
-  # Cylancer\CyWatermark\EventListener\BeforeFileProcessing:
-  #   tags:
-  #     - name: event.listener
-  #       identifier: 'watermark.before-file-processing'
-  #       event: TYPO3\CMS\Core\Resource\Event\BeforeFileProcessingEvent
-

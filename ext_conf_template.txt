@@ -1,6 +1,5 @@
-# cat=basic; type=string; label=For each mime type conversion parameters (for internal adapter) or command + parameters (in sprintf format for external adapter) (see documentation)
-parameters = image/jpeg::-quality 85 -define webp:lossless=false|image/png::-quality 75 -define webp:lossless=true|image/gif::-quality 85 -define webp:lossless=true
+# cat=basic; type=string; label=In JSON format, you can specify the PHP-supported memory options for each image format here.
+image_save_options = {"jpeg":{"quality":75},"webp":{"quality":80},"bmp":{"compressed":true},"png":{"quality":-1,"filter":"NO_FILTER"}}
 # cat=basic; type=string; label=Supported mime types (comma separated)
-mime_types = image/jpeg,image/png,image/gif
-# cat=basic; type=string; label=Pattern to filter out files
-filter_pattern = /\.(jpe?g|png|gif)\.webp$/i
+mime_types = image/jpeg,image/png,image/gif,image/webp,image/bmp
+
