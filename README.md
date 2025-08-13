@@ -2,6 +2,7 @@
 
 ## Change log
 
+* 0.4.1 FIX Fix an option text.
 * 0.4.0 UPD Connect the extension settings to the watermark service.
 * 0.3.0 DOC Add a readme documentation.
 * 0.2.0 INI beta version

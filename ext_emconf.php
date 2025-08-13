@@ -1,10 +1,10 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Watermarks for content elements',
+    'title' => 'Watermarks for frontend images',
     'description' => '',
     'category' => 'plugin',
-    'version' => '0.4.0',
+    'version' => '0.4.1',
     'state' => 'beta',
     'clearCacheOnLoad' => 1,
     'author' => 'Clemens Gogolin',
