@@ -2,6 +2,7 @@
 namespace Cylancer\CyWatermark\Hook;
 
 use Cylancer\CyWatermark\Domain\Model\SourceOption;
+use Cylancer\CyWatermark\Resource\Processing\LocalImageProcessor;
 use Cylancer\CyWatermark\Service\Configuration;
 use Cylancer\CyWatermark\Service\WatermarkService;
 use Exception;
@@ -9,30 +10,25 @@ use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Resource\ProcessedFileRepository;
-use TYPO3\CMS\Core\Resource\Processing\LocalCropScaleMaskHelper;
 use TYPO3\CMS\Core\Resource\Processing\ProcessorInterface;
 use TYPO3\CMS\Core\Resource\Processing\TaskInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Resource\Processing\LocalImageProcessor;
+
 
 class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
-{
-
-
-
-    /**
-     * Returns TRUE if this processor can process the given task.
-     *
-     * @return bool
-     */
+{ /**
+  * Returns TRUE if this processor can process the given task.
+  *
+  * @return bool
+  */
     public function canProcessTask(TaskInterface $task): bool
     {
         if (
-            GeneralUtility::makeInstance(LocalImageProcessor::class)->canProcessTask($task)
+            GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\Processing\LocalImageProcessor::class)->canProcessTask($task)
             && $this->shouldProcess($task->getTargetFile())
         ) {
             $sourceFile = $task->getSourceFile();
-          //  debug($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source']);
+            //  debug($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source']);
             switch (SourceOption::tryFrom($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source'])) {
                 case SourceOption::NONE:
                     return false;
@@ -65,7 +61,7 @@ class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
          * always a processed file.
          */
         /** @var LocalImageProcessor $localImageProcessor */
-        $localImageProcessor = GeneralUtility::makeInstance(LocalImageProcessor::class, GeneralUtility::makeInstance(LocalCropScaleMaskHelper::class, true));
+        $localImageProcessor = GeneralUtility::makeInstance(LocalImageProcessor::class);
 
         /** @var ProcessedFileRepository $processedFileRepository */
         $processedFileRepository = GeneralUtility::makeInstance(ProcessedFileRepository::class);

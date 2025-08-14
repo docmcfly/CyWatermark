@@ -140,6 +140,7 @@ final class WatermarkService
         ?int $relativeSize
 
     ): void {
+      
         $padding = 10;
 
         $background = $this->createImage($processedFile);

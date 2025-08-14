@@ -28,17 +28,6 @@ ExtensionManagementUtility::addTypoScript(
     "@import 'EXT:cy_watermark/Configuration/TypoScript/setup.typoscript'"
 );
 
-
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\Processing\LocalCropScaleMaskHelper::class] = [
-    'className' => Cylancer\CyWatermark\Resource\Processing\LocalCropScaleMaskHelper::class,
-];
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\Processing\LocalImageProcessor::class] = [
-    'className' => Cylancer\CyWatermark\Resource\Processing\LocalImageProcessor::class,
-];
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\Processing\LocalPreviewHelper::class] = [
-    'className' => Cylancer\CyWatermark\Resource\Processing\LocalPreviewHelper::class,
-];
-
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['processors']['CyWatermarkProcessor'] = [
     'className' => WatermarkHookImpl::class,
     'before' => ['LocalImageProcessor'],
