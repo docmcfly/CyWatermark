@@ -2,6 +2,7 @@
 
 ## Change log
 
+* 0.6.0 FIX Fix the composer file. 
 * 0.5.0 RMV Remove XClass api call.
 * 0.4.1 FIX Fix an option text.
 * 0.4.0 UPD Connect the extension settings to the watermark service.

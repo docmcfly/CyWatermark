@@ -1,5 +1,5 @@
 {
-  "name": "clyancer/cy_watermark",
+  "name": "cylancer/cy_watermark",
   "type": "typo3-cms-extension",
   "license": "GPL-2.0-or-later",
   "description": "Creates news from mails",
