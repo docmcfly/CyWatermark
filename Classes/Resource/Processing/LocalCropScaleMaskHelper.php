@@ -15,20 +15,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Helper class to locally perform a crop/scale/mask task with the TYPO3 image processing classes.
  */
-class LocalCropScaleMaskHelper extends \TYPO3\CMS\Core\Resource\Processing\LocalCropScaleMaskHelper implements \Cylancer\CyWatermark\Resource\Processing\LocalHelperInterface
+class LocalCropScaleMaskHelper extends \TYPO3\CMS\Core\Resource\Processing\LocalCropScaleMaskHelper
 {
     public function __construct(private readonly bool $forceCreation = false)
     {
-    }
-
-    /**
-     * Returns the name of the helper.
-     *
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'CropScaleMask';
     }
 
     /**

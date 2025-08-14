@@ -23,19 +23,10 @@ class LocalImageProcessor extends \TYPO3\CMS\Core\Resource\Processing\LocalImage
     /**
      * You can create a local images processor with alternative helpers.
      * 
-     * @param \TYPO3\CMS\Core\Resource\Processing\LocalHelper[] $localHelpers
      */
-    public function __construct(LocalHelperInterface ...$localHelpers)
+    public function __construct()
     {
-        if (empty($localHelpers)) {
-            foreach ([GeneralUtility::makeInstance(LocalPreviewHelper::class), GeneralUtility::makeInstance(LocalCropScaleMaskHelper::class)] as $localHelper) {
-                $this->helpers[$localHelper->getName()] = $localHelper;
-            }
-        } else {
-            foreach ($localHelpers as $localHelper) {
-                $this->helpers[$localHelper->getName()] = $localHelper;
-            }
-        }
+        $this->helpers['CropScaleMask'] = GeneralUtility::makeInstance(LocalCropScaleMaskHelper::class, true);
     }
 
 
@@ -51,7 +42,7 @@ class LocalImageProcessor extends \TYPO3\CMS\Core\Resource\Processing\LocalImage
 
     /**
      * @param string $taskName
-     * @return LocalCropScaleMaskHelper|LocalPreviewHelper
+     * @return LocalCropScaleMaskHelper
      * @throws \InvalidArgumentException
      */
     protected function getHelperByTaskName($taskName)
