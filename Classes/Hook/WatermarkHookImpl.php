@@ -23,11 +23,13 @@ class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
   */
     public function canProcessTask(TaskInterface $task): bool
     {
+        debug($task, "wmhi");
         if (
             GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\Processing\LocalImageProcessor::class)->canProcessTask($task)
             && $this->shouldProcess($task->getTargetFile())
         ) {
             $sourceFile = $task->getSourceFile();
+            debug($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source']);
             //  debug($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source']);
             switch (SourceOption::tryFrom($sourceFile->getMetaData()->get()['tx_cywatermark_watermark_source'])) {
                 case SourceOption::NONE:
@@ -90,7 +92,7 @@ class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
         if ('Image.CropScaleMask' !== $processedFile->getTaskIdentifier()) {
             return false;
         }
-
+        debug($processedFile->getTaskIdentifier());
         // $processionConfiguration = $processedFile->getProcessingConfiguration();
         // $iconSize = 150;
         // if (
@@ -103,13 +105,15 @@ class WatermarkHookImpl implements ProcessorInterface //, LoggerAwareInterface
         // }
 
         if (!WatermarkService::isSupportedMimeType($processedFile->getOriginalFile()->getMimeType())) {
+            debug("isSupportedMimeType");
             return false;
         }
 
         if (!$this->isStorageLocalAndWritable($processedFile)) {
+            debug("isStorageLocalAndWritable");
             return false;
         }
-
+ debug("return true");
         return true;
     }
 

@@ -15,7 +15,7 @@ $GLOBALS['TCA']['sys_category']['palettes']['tx_cywatermark_watermark_category_s
 
 ExtensionManagementUtility::addTCAcolumns('sys_category', [
     'tx_cywatermark_watermark_file' => [
-        //'exclude' => true,
+        'exclude' => true,
         'label' => $translationKey . 'sys_category.tx_cywatermark_watermark_file',
         'config' =>
             [
@@ -30,7 +30,7 @@ ExtensionManagementUtility::addTCAcolumns('sys_category', [
 
     ],
     'tx_cywatermark_watermark_relative_size' => [
-        //'exclude' => true,
+        'exclude' => true,
         'label' => $translationKey . 'sys_category.tx_cywatermark_watermark_relative_size',
         'config' => [
             'type' => 'number',

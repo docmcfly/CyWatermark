@@ -30,7 +30,7 @@ ExtensionManagementUtility::addTCAcolumns(
                     [$translationKey . 'tx_cywatermark_watermark_source.category', 1], //  SourceOption::CATEGORY],
                     [$translationKey . 'tx_cywatermark_watermark_source.file', 2], //  SourceOption::IMAGE],
                 ],
-                'default' => $translationKey . 'tx_cywatermark_watermark_source.category',
+                'default' => '1',
             ],
         ],
 
@@ -49,7 +49,7 @@ ExtensionManagementUtility::addTCAcolumns(
             ],
         ],
         'tx_cywatermark_watermark_relative_size' => [
-            //'exclude' => true,
+            'exclude' => true,
             'label' => $translationKey . 'sys_category.tx_cywatermark_watermark_relative_size',
             'config' => [
                 'type' => 'input',
